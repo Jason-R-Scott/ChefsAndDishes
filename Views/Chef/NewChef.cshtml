@@ -1,0 +1,52 @@
+@model ChefsAndDishes.ViewModels.ChefViewModel;
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv='X-UA-compatible' content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <title>New Chef</title>
+
+    <style>
+        .col-sm {
+            background-color: lightslategray;
+            border: solid 1px darkgray;
+            border-radius: 15px;
+            padding:15px;
+            color: wheat;
+            margin: 10px;
+            min-height: 300px;
+            }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <h5>Add a New Chef!</h5>
+        <a href="/">Home</a>
+            <div class="row">
+                <div class="col-sm">
+                    <form asp-action="Create" asp-controller="Chef" method="POST">
+
+                    <label asp-for="FirstName">First Name</label>
+                    <span asp-validation-for="FirstName"></span>
+                    <input asp-for="FirstName" type="text" placeholder="First Name"><br><br>
+
+                    <label asp-for="LastName">Last Name</label>
+                    <span asp-validation-for="LastName"></span>
+                    <input asp-for="LastName" type="text" placeholder="Last Name"><br><br>
+
+                    <label asp-for="DateOfBirth">Date of Birth</label>
+                    <span asp-validation-for="DateOfBirth"></span>
+                    <input asp-for="DateOfBirth" type="date"><br><br>
+
+                    <input class="btn btn-success" type="submit" value="submit">
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
